@@ -5,40 +5,282 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>MOTIF Dataset</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 80px auto;
-      padding: 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 24px;
       text-align: center;
-      line-height: 1.6;
+      line-height: 1.7;
+      color: #222;
+      background-color: #fff;
     }
-    h1 { font-size: 64px; margin-bottom: 0; }
-    h2 { margin-top: 60px; }
-    .subtitle { font-size: 22px; color: #555; }
-    a { margin: 12px; color: #2563eb; }
+
+    h1 {
+      font-size: 72px;
+      margin: 0;
+      letter-spacing: 2px;
+    }
+
+    h2 {
+      font-size: 30px;
+      margin-top: 65px;
+      margin-bottom: 18px;
+    }
+
+    h3 {
+      font-size: 25px;
+      margin-top: 45px;
+      margin-bottom: 12px;
+    }
+
+    .subtitle {
+      font-size: 23px;
+      color: #555;
+      margin-top: 0;
+    }
+
+    .tagline {
+      font-size: 21px;
+      max-width: 850px;
+      margin: 24px auto;
+      line-height: 1.5;
+    }
+
+    .links {
+      margin: 25px 0 40px;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 8px 15px;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .links a:hover {
+      text-decoration: underline;
+    }
+
+    .description {
+      font-size: 17px;
+      color: #444;
+      max-width: 900px;
+      margin: 15px auto 30px;
+      line-height: 1.8;
+    }
+
+    .video-container {
+      width: 100%;
+      margin: 30px auto;
+    }
+
+    video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+      background-color: #000;
+    }
+
+    .motion-section {
+      margin-top: 60px;
+    }
+
+    .motion-section h3 {
+      margin-bottom: 12px;
+    }
+
+    .motion-section p {
+      max-width: 850px;
+      margin: 0 auto 20px;
+      font-size: 17px;
+      color: #555;
+    }
+
+    .placeholder {
+      padding: 55px 20px;
+      background: #f7f7f7;
+      border: 1px solid #e5e5e5;
+      border-radius: 8px;
+      color: #888;
+      font-size: 16px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 35px 15px;
+      }
+
+      h1 {
+        font-size: 48px;
+      }
+
+      h2 {
+        font-size: 25px;
+      }
+
+      h3 {
+        font-size: 22px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .tagline {
+        font-size: 18px;
+      }
+
+      .description,
+      .motion-section p {
+        font-size: 15px;
+      }
+    }
   </style>
 </head>
+
 <body>
+
+  <!-- Header -->
   <h1>MOTIF</h1>
   <p class="subtitle">MOTion with Integrated Fingers</p>
-  <p>
+
+  <p class="tagline">
     A Language-Annotated Motion Capture Dataset of
     Expressive Whole-Body Motion with Fingers
   </p>
 
-  <div>
+  <div class="links">
     <a href="#">Paper (Coming Soon)</a>
     <a href="#">Dataset (Coming Soon)</a>
     <a href="#">Code (Coming Soon)</a>
   </div>
 
+
+  <!-- Overview -->
   <h2>Overview</h2>
-  <p>
-    MOTIF captures expressive whole-body human motions,
-    integrating natural finger gestures and
-    language descriptions.
+
+  <p class="description">
+    MOTIF is a large-scale human motion capture dataset comprising
+    approximately <strong>65 hours of motion data</strong>,
+    captured using <strong>40 Vicon Vero 2.2 cameras</strong>.
+    It features expressive whole-body movements with detailed
+    finger articulations, paired with natural language descriptions.
+    The dataset includes numerous
+    <strong>long-horizon motion sequences exceeding 30 seconds</strong>,
+    spanning a wide range of human behaviors.
   </p>
+
+  <p class="description">
+    MOTIF covers diverse motion categories, including locomotion,
+    dance, object interaction, scene interaction, cinematic acting,
+    and everyday activities. The motions range from expressive
+    walking and running variations to sitting, lying down,
+    and other natural daily behaviors.
+  </p>
+
+
+  <!-- Main Motion Visualization -->
+  <div class="video-container">
+    <video autoplay muted loop playsinline controls preload="metadata">
+      <source src="asset/smplx_20_grid_5x4_vf.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+
+
+  <!-- Motion Categories -->
+  <h2>Motion Diversity</h2>
+
+
+  <!-- (a) Locomotion -->
+  <section class="motion-section">
+
+    <h3>(a) Locomotion</h3>
+
+    <p>
+      MOTIF includes diverse locomotion patterns beyond conventional
+      walking and running. Examples include running while flapping
+      the arms like wings, walking while clutching the chest,
+      walking with outstretched arms, crouched walking,
+      jumping, and other expressive locomotion variations.
+    </p>
+
+    <div class="video-container">
+      <video autoplay muted loop playsinline controls preload="metadata">
+        <source src="asset/motif_locomotion.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+
+  </section>
+
+
+  <!-- (b) Dance Movement -->
+  <section class="motion-section">
+
+    <h3>(b) Dance Movement</h3>
+
+    <p>
+      MOTIF contains a wide variety of dance movements,
+      featuring coordinated whole-body dynamics,
+      expressive arm movements, and natural finger gestures.
+    </p>
+
+    <div class="video-container">
+      <video autoplay muted loop playsinline controls preload="metadata">
+        <source src="asset/motif_dance.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div>
+
+  </section>
+
+
+  <!-- (c) Object Interaction -->
+  <section class="motion-section">
+
+    <h3>(c) Object Interaction</h3>
+
+    <p>
+      MOTIF includes motions involving interactions with
+      everyday objects, capturing coordinated body movements
+      and natural hand and finger gestures.
+    </p>
+
+    <!-- Replace this placeholder when the video is ready -->
+    <div class="placeholder">
+      Object Interaction Video (Coming Soon)
+    </div>
+
+  </section>
+
+
+  <!-- (d) Scene Interaction -->
+  <section class="motion-section">
+
+    <h3>(d) Scene Interaction</h3>
+
+    <p>
+      MOTIF features human motions involving interactions
+      with the surrounding environment, including sitting,
+      lying down, and other scene-dependent everyday activities.
+    </p>
+
+    <!-- Replace this placeholder when the video is ready -->
+    <div class="placeholder">
+      Scene Interaction Video (Coming Soon)
+    </div>
+
+  </section>
+
 </body>
 </html>
